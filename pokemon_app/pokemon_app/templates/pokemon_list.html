@@ -1,7 +1,51 @@
-{% for pokemon in pokemon_list %}
-    <div class="pokemon-card">
-        <h3>{{ pokemon.name }}</h3>
-        <p>{{ pokemon.url }}</p>
-        <a href="{% url 'pokemon_detail' pokemon.name %}" class="detail-button">Detail</a>
-    </div>
-{% endfor %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pokémon List</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pokémon List</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>URL</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for pokemon in pokemon_list %}
+            <tr>
+                <td>{{ pokemon.name }}</td>
+                <td>{{ pokemon.url }}</td>
+                <td><a href="{% url 'pokemon_detail' pokemon.name %}" class="detail-button">Detail</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- Add any other content or elements as needed -->
+
+    <!-- Add your JavaScript or other script elements here -->
+</body>
+</html>

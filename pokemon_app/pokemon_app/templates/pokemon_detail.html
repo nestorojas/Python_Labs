@@ -1,5 +1,27 @@
-{% for ability in abilities %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pokémon Details</title>
+    <!-- Add your CSS and other head elements here -->
+</head>
+<body>
+    <h1>Pokémon Details</h1>
+    <h2>Pokemon Name : {{ pokemon.name }}</h2>
+
+    <h3>Abilities:</h3>
+    {% for ability in abilities %}
     <div class="ability-card">
-        <h4>{{ ability.ability.name }}</h4>
+        <ul>
+            <li>{{ ability.ability.name }}</li>
+        </ul>
     </div>
-{% endfor %}
+    {% endfor %}
+
+    <!-- Add any other content or elements as needed -->
+
+    <a href="{% url 'pokemon_list' %}">Back to Pokémon List</a>
+
+    <!-- Add your JavaScript or other script elements here -->
+</body>
+</html>
+
