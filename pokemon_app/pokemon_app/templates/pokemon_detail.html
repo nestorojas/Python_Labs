@@ -3,24 +3,42 @@
 <head>
     <title>Pokémon Details</title>
     <!-- Add your CSS and other head elements here -->
+    <style>
+    .container{
+        padding: 50px;
+    }
+    .detail-button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px; /* Adding border radius */
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            }
+    </style>
 </head>
 <body>
-    <h1>Pokémon Details</h1>
-    <h2>Pokemon Name : {{ pokemon.name }}</h2>
-
-    <h3>Abilities:</h3>
-    {% for ability in abilities %}
-    <div class="ability-card">
-        <ul>
-            <li>{{ ability.ability.name }}</li>
-        </ul>
+    <div class="container">
+        <h1>Pokémon Details</h1>
+        <h2>Pokemon Name : {{ pokemon.name }}</h2>
+    
+        <h3>Abilities:</h3>
+        {% for ability in abilities %}
+        <div class="ability-card">
+            <ul>
+                <li>{{ ability.ability.name }}</li>
+            </ul>
+        </div>
+        {% endfor %}
+    
+        <!-- Add any other content or elements as needed -->
+    
+        <a href="{% url 'pokemon_list' %}" class="detail-button">Back to Pokémon List</a>
     </div>
-    {% endfor %}
-
-    <!-- Add any other content or elements as needed -->
-
-    <a href="{% url 'pokemon_list' %}">Back to Pokémon List</a>
-
     <!-- Add your JavaScript or other script elements here -->
 </body>
 </html>
